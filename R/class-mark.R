@@ -19,7 +19,7 @@
 #' @template event_first
 #' @template return
 #'
-#' @inheritParams ppv
+#' @inheritParams sens
 #'
 #' @author Robert Komara
 #'
