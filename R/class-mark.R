@@ -122,10 +122,10 @@ marked_table_impl <- function(data, estimator) {
 }
 
 marked_binary <- function(data) {
-  # sens + spec - 1
-  recall_binary(data) + spec_binary(data) - 1
+  # ppv + npv - 1
+  ppv_binary(data) + npv_binary(data) - 1
 }
 
 marked_multiclass <- function(data, estimator) {
-  recall_multiclass(data, estimator) + spec_multiclass(data, estimator) - 1
+  ppv_multiclass(data, estimator) + npv_multiclass(data, estimator) - 1
 }
