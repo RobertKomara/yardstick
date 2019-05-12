@@ -25,21 +25,21 @@ test_that('Two class', {
 
 # ------------------------------------------------------------------------------
 
-# multi_ex <- data_three_by_three()
-# micro <- data_three_by_three_micro()
-#
-# test_that('Three class', {
-#
-#   expect_equal(
-#     j_index(multi_ex, estimator = "macro")[[".estimate"]],
-#     macro_metric(j_index_binary)
-#   )
-#   expect_equal(
-#     j_index(multi_ex, estimator = "macro_weighted")[[".estimate"]],
-#     macro_weighted_metric(j_index_binary)
-#   )
-#   expect_equal(
-#     j_index(multi_ex, estimator = "micro")[[".estimate"]],
-#     with(micro, sum(tp) / sum(p) + sum(tn) / sum(n) - 1)
-#   )
-# })
+multi_ex <- data_three_by_three()
+micro <- data_three_by_three_micro()
+
+test_that('Three class', {
+
+  expect_equal(
+    marked(multi_ex, estimator = "macro")[[".estimate"]],
+    macro_metric(marked_binary)
+  )
+  expect_equal(
+    marked(multi_ex, estimator = "macro_weighted")[[".estimate"]],
+    macro_weighted_metric(marked_binary)
+  )
+  expect_equal(
+    marked(multi_ex, estimator = "micro")[[".estimate"]],
+    with(micro, sum(tp) / sum(p) + sum(tn) / sum(n) - 1)
+  )
+})
